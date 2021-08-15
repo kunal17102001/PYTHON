@@ -1,0 +1,15 @@
+foods=['bacon','tuna','sausages','beaf','ham']
+for f in foods:
+    print(f,len(f))
+print(foods[3])
+for x in range(10):
+    print(x)
+for u in range(5,10):
+    print("u are awesome!!")
+for x in range(10,100,10):
+    print(x)
+
+num=int(input("enter a number:"))
+while num<=20:
+    print(num)
+    num+=5
