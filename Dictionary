@@ -1,0 +1,4 @@
+classmates={'Tony':' cool buddy','Sam ':'#the google boy','Ramsey ':'beauty with brains!'}
+#the first part is the key(k), second part is it's value(v)
+for k,v in classmates.items():
+     print(k+ v)
