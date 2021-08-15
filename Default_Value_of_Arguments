@@ -1,0 +1,14 @@
+#the default value is used to avoid the garbage val'n
+def get_gender(sex='unknown'):
+    if sex=='m':
+       print("MALE")
+    elif sex=='f':
+       print("FEMALE")
+    else:
+       print(sex)
+
+get_gender('f')
+get_gender('m')
+gender=input("Enter the gender(f/m): ")
+get_gender(gender)
+get_gender()  # when the default val is removed we get a TypeError because the func expects an argument & don't pass one!!-
