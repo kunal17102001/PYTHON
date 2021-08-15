@@ -1,0 +1,12 @@
+def allowed_dating_age(my_age):
+    girl_age=(my_age/2)+7
+    return girl_age
+
+knight= allowed_dating_age(20)
+print("knight can date girls whose age is",knight,"or above")
+
+print("the elegible girls age as u age up would be as follows :")
+for n in range(20,50,1):
+    #print("the elegible girls age as u age up would be as follows :")
+    knight=allowed_dating_age(n)
+    print("knight at",n,"year's age can date girls whose age is", knight, "or above")
