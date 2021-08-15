@@ -1,0 +1,8 @@
+def func(name="knight",action="ate",item="fish"):  # These are the default argument
+    print(name,action,item)
+
+func("sam",'hit',"shaw")  #the order of argument is same
+func("hit",'shaw','sam')  #now the name is hit
+#when u want to explicitly initialize the arguments , use the keyword
+func(name="ram",item='ladoo')
+func(action='is doing',item='homework ')
