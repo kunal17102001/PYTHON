@@ -1,0 +1,12 @@
+#1st function defination
+def func1():
+    print("DAMM!! Functions are cool")
+
+#2nd Function defination convert bitcoin to USD
+def func2(btc):  #btc is the argument passed to the function
+    amount=btc*57
+    print(btc ,"bitcoin in USD =",amount)
+
+#funtion calls
+func1()
+func2(10)
