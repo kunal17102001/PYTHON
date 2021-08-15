@@ -1,0 +1,12 @@
+def add_numbers(* args):
+# * is used when u don't know the total no. of argument
+# instead of args u can also use some other name but it's just a common practice when using flexible arguments, so don't get confused
+    total=0
+    for a in args:
+        total+=a
+    print(total)
+
+add_numbers(3)
+add_numbers(3,38,45)
+add_numbers(99,1,45756)
+add_numbers(6456,48,89,989898)
