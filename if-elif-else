@@ -1,0 +1,11 @@
+age=int(input("enter your age: "))
+if age>18:
+    print("\nyou can drink alcohol!! ")
+
+name=(input("enter a name "))
+if name == "BUCKY":
+    print("hi there BUCKY")
+elif name == "LUCY":
+    print("hi there lucy")
+else:
+    print("hi there",name,"it's been a long day without u my friend")
