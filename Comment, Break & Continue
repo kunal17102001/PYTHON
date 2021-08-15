@@ -1,0 +1,22 @@
+magicnumber=int(input("Enter your magic no.:"))
+#this is for single line comment
+'''
+print("jdfkn")
+print("this is for multiple line comment")
+'''
+for n in range(101):
+    if n is magicnumber:
+        print("the magic no. is ",n)
+        break
+    else:
+        print(n) 
+
+Jersey_numbers=[12,9,3,8,17]
+print("the jersey no's which are still available are : ")
+for n in range(1,20):
+    if n in Jersey_numbers:
+        continue
+    else:
+        print(n)
+        
+        
