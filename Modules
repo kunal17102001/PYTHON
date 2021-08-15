@@ -1,0 +1,25 @@
+# when u want to write/use the same peice of code over and over again in the same file or in different file
+import PROJECT1
+import random
+#SYNTAX: import file_name
+
+#knight()
+#ModuleNotFoundError: No module named 'knight'
+#This is because , incase we are using/importing more than file and they may also have the same func. name so we need
+# to be specific that whi\ch module we are using
+
+PROJECT1.kunal()
+x=random.randrange(20,100,5)
+print(x)
+
+'''
+#Create this as a diff. .py file in your python IDE 
+PROJECT 1
+PI = 3.14
+r = float(input("Enter the radius of a circle:"))
+area = PI * (r**2)
+print("Area of a circle = %.2f" %area)
+
+def kunal():
+    print("Hi there, I am kunal")
+'''
