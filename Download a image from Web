@@ -1,0 +1,11 @@
+import random
+import urllib.request # allows to data from websites
+
+def download_web_image(url):
+    name=random.randrange(1,1000)
+    full_name=str(name)+".jpg" #explicit type-casting
+    urllib.request.urlretrieve(url,full_name)
+
+download_web_image("https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.thestreet.com%2F.image%2Far_16%3A9%252Cc_fill%252Ccs_srgb%252Cfl_progressive%252Cq_auto%3Agood%252Cw_1200%2FMTY4NjM5NjMwMTE0Njk1MDYz%2F10-outrageously-expensive-mens-luxury-watches-on-amazon.jpg&imgrefurl=https%3A%2F%2Fwww.thestreet.com%2Fpersonal-finance%2Fthe-10-most-expensive-mens-luxury-watches-on-amazon-13240178&tbnid=V2QUBTwBFCRqRM&vet=12ahUKEwiHodbT2a3yAhUsFLcAHdufAPsQMygRegUIARDcAg..i&docid=36l8iby8jKaSOM&w=1200&h=675&q=luxury%20watches&hl=en&ved=2ahUKEwiHodbT2a3yAhUsFLcAHdufAPsQMygRegUIARDcAg")
+# Remeber to pass this URL as a string
+# The following URL is of a watch image
