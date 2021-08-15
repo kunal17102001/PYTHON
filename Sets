@@ -1,0 +1,20 @@
+# Set-- is collection of items ,but the key feature is it cannot have duplicates
+groceries=['milk','kellogs','oats','milk','Dryfruits']
+#groceries={'milk','kellogs','oats','milk','Dryfruits'}# .append() does not work with this
+print(groceries) # NOTICE!! milk is executed only once that to the 1st position in the list is considered
+
+if 'dark chocolate 'in groceries:
+    print("u already have it buddy!!")
+else:
+    print("Please, add dark chocolate to the list as well")
+    groceries.append("dark chacolate")
+
+if 'milk'in groceries:
+    print("u already have milk buddy!!")
+else:
+    print("Please, add milk to the list as well")
+
+print("your grocery list is as follows")
+for g in groceries:
+    #.items():
+    print(g)
