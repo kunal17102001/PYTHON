@@ -1,0 +1,22 @@
+def health_calculator(age, apples_ate, cigs_smoked):
+    ans=(100-age)+(apples_ate*3.5)-(cigs_smoked*5)
+    print(ans)
+    return ans
+
+'''
+knights_data=(20,24,0)
+health_calculator(*knights_data)
+THIS WILL ALSO GIVE THE SAME RESULT!!!
+'''
+
+knights_data=[20,24,0]
+health_calculator(knights_data[0],knights_data[1],knights_data[2])  #This is a long process
+health_calculator(*knights_data) # This * is not used in the func so now it's used for UNPACKAGEING ie.
+                              # It will take all the elements of knights data one-by-one and will save a lot of time!!
+                              # SAME RESULT!!!
+
+health=health_calculator(20,25,0)
+if health>150:
+    print("You are a healthy person")
+else:
+    print("you are an unhealthy person")
