@@ -1,0 +1,19 @@
+# takeing 5 inputs from the user
+count=0
+for n in range(1,6):
+   r=int(input("enter no.: "))
+   if r>0:
+       count=count+1
+
+print("total positive no. entered are :",count)
+
+'''
+# this code can also be used___
+start = int(input("Enter the start of range: "))
+end = int(input("Enter the end of range: "))
+
+for num in range(start, end + 1):
+    if num >= 0:
+        print(num, end = " ")
+
+'''
