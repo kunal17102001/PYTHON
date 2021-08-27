@@ -1,0 +1,52 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas
+import argparse
+import connect
+
+parser= argparse.ArgumentParser()
+parser.add_argument("--page_num_max",help="Enter no.of pages to parse", type=int)
+parser.add_argument("--dbname", help="Enter no.of db",type=str)
+args=parser.parse_args()
+
+oyo_url = " https://www.oyorooms.com/hotels-in-pune/?page=" #because there are multiple pages of a website
+page_no_MAX = args.page_num_max
+scraped_info_list = []
+connect.connect(args.dbname)
+
+for page_no in range(1,page_no_MAX):
+    req = requests.get(oyo_url + str(page_no))
+    content = req.content
+
+    soup = BeautifulSoup(content, "html.parser")
+
+    all_hotels = soup.find_all("div", {"class": "hotelCardListing"})
+    #scraped_info_list = []
+
+    for hotel in all_hotels:
+        hotel_dic = {}
+        hotel_dic["name"] = hotel.find("h3", {"class": "ListingHotelDescription__hotelName"}).text
+        hotel_dic["address"] = hotel.find("spam", {"itemprop": "streetAddress"}).text
+        hotel_dic["price"] = hotel.find("spam", {"class": "listingPrice__finalPrice"}).text
+        try:
+            hotel_dic["rating"] = hotel.find("spam", {"class": "hotelRating__ratingSummary"}).text
+        except AttributeError:
+            hotel_dic["rating"] = None
+        # print(hotel_name,hotel_address,hotel_price,hotel_rating)
+        parent_amenities_element = hotel.find("div", {"class": "amenityWrapper"})
+
+        amenities_list = []
+
+        for amenity in parent_amenities_element.find_all("div", {"class": "amenityWrapper__amenity"}):
+            amenities_list.append(amenity.find("spam", {"class": "d-body-smd-textEllipsis"}).text.strip())
+
+        hotel_dic["amenities"] = ", ".join(amenities_list[:-1])  # SLICING
+
+        scraped_info_list.append(hotel_dic)
+        connect.insert_into_table(args.dbname, tuple(hotel_dic.values()))
+        # print(hotel_name, hotel_address, hotel_price, hotel_rating,amenities_list)
+
+dataFrame = pandas.DataFrame(scraped_info_list)
+print("Creating CSV file:")
+dataFrame.to_csv("Oyo.csv")
+connect.get_hotel_info(args.dbname)
